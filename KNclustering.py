@@ -12,9 +12,11 @@ from sklearn import metrics
 data = pd.read_csv("Dataset.csv")
 print(data.head())
 print(data.columns)
+
 # data visualization
 data.hist(column="income", figsize=(20, 30), bins=50)
-data.plot(kind="scatter", x="income", y="age", figsize=(20, 30), c="custcat")
+data.plot(kind="scatter", x="income", y="age", figsize=(20, 30), c="custcat", cmap=plt.get_cmap('jet'), colorbar=True)
+data.plot(kind="scatter", x="income", y="age", xlim=(0, 250), figsize=(20, 30), c="custcat", cmap=plt.get_cmap('jet'), colorbar=True)
 print(plt.show())
 
 
@@ -68,6 +70,9 @@ plt.ylabel('Accuracy ')
 plt.xlabel('Number of Nabors (K)')
 plt.tight_layout()
 plt.show()
+
+max_accuracy = mean_acc.max()
+print("We acquire maximum accurray at k=", mean_acc.argmax(), "the score is : ", max_accuracy)
 
 
 
