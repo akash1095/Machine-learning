@@ -9,7 +9,7 @@ from sklearn import metrics
 
 # we are loading our data into our program.
 
-data = pd.read_csv("teleCust1000t.csv")
+data = pd.read_csv("Dataset.csv")
 print(data.head())
 print(data.columns)
 # data visualization
